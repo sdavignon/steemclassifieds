@@ -1,0 +1,21 @@
+@import (reference) '../styles/modules/variables.less';
+
+.TopicSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 @mobile-padding;
+
+  @media @small {
+    padding: 0;
+  }
+
+  &__topics {
+    & > a {
+      &:not(:nth-child(1)) {
+        margin-left: 4px;
+      }
+    }
+  }
+}

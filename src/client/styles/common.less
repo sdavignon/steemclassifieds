@@ -1,0 +1,97 @@
+@import (reference) './custom.less';
+
+body {
+  overflow-y: scroll;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.white-bg {
+  background: @white;
+}
+
+.content {
+  margin-top: 56px;
+}
+
+.shifted {
+  margin-top: 21px;
+}
+
+.text-icon {
+  font-size: 18px !important;
+  margin-right: 4px;
+  vertical-align: -1px;
+}
+
+.text-icon-right {
+  margin-left: 4px;
+  vertical-align: -1px;
+}
+
+.ant-layout {
+  overflow: visible;
+}
+
+.ant-modal-mask,
+.ant-modal-wrap {
+  z-index: 1200;
+}
+
+.ant-tooltip {
+  z-index: 1060;
+
+  &-content {
+    font-weight: 500;
+
+    a {
+      color: @white;
+    }
+  }
+}
+
+.ant-popover-title {
+  color: #9d9d9d;
+  line-height: 36px;
+  height: 36px;
+}
+
+video {
+  max-width: 100%;
+}
+
+.iconfont {
+  font-size: 26px;
+}
+
+.capitalize-text {
+  text-transform: capitalize;
+
+  a {
+    text-transform: none;
+  }
+}
+
+.username {
+  color: @black;
+  font-weight: 500;
+}
+
+iframe {
+  border: none;
+}
+
+.float-right {
+  float: right;
+}
+
+div[data-dir='rtl'] {
+  direction: rtl;
+}

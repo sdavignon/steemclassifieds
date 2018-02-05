@@ -1,0 +1,31 @@
+{
+  "name": "SteemClassifieds",
+  "scripts": {},
+  "env": {
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_NO_CONFIG_FILE": {
+      "required": true
+    },
+    "NEW_RELIC_APP_NAME": {
+      "required": true
+    },
+    "DEBUG": {
+      "description": "Debug namespaces for https://github.com/visionmedia/debug.",
+      "value": "busy:server",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
