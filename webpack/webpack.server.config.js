@@ -43,10 +43,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.IMG_HOST': JSON.stringify(process.env.IMG_HOST || 'https://img.busy.org'),
       'process.env.STEEMCONNECT_CLIENT_ID': JSON.stringify(
-        process.env.STEEMCONNECT_CLIENT_ID || 'steemclassifieds.app',
+        process.env.STEEMCONNECT_CLIENT_ID || 'steemclassifieds',
       ),
       'process.env.STEEMCONNECT_REDIRECT_URL': JSON.stringify(
-        process.env.STEEMCONNECT_REDIRECT_URL || 'http://localhost:3000/callback',
+        process.env.STEEMCONNECT_REDIRECT_URL || 'https://steemclassifieds.herokuapp.com/callback',
       ),
       'process.env.STEEMCONNECT_HOST': JSON.stringify(
         process.env.STEEMCONNECT_HOST || 'https://steemconnect.com',
