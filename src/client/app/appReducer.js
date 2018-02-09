@@ -12,7 +12,7 @@ const initialState = {
   trendingTopics: [],
   rewardFund: {},
   bannerClosed: false,
-  appUrl: 'https://busy.org',
+  appUrl: 'https://steemclassifieds.herokuapp.com',
   usedLocale: 'en',
   cryptosPriceHistory: {},
 };
