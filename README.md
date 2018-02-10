@@ -2,7 +2,7 @@
 
 # SteemClassifieds 
 
-SteemClasssiieds a form of Busy, is an Open Source classified network and communications platform which extends itself to a variety of rich features and functionality including free digital payments and a marketplace for goods and services. 
+SteemClasssieds a form of Busy, is an Open Source classified network and communications platform which extends itself to a variety of rich features and functionality including free digital payments and a marketplace for goods and services. 
 
 For more info about Busy: https://busy.org/@busy.org
 
