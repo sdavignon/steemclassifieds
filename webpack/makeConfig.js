@@ -46,7 +46,6 @@ function makePlugins(options) {
         ENABLE_LOGGER: JSON.stringify(process.env.ENABLE_LOGGER),
         IMG_HOST: JSON.stringify(process.env.IMG_HOST || 'https://img.busy.org'),
         SENTRY_PUBLIC_DSN: isDevelopment ? null : JSON.stringify(process.env.SENTRY_PUBLIC_DSN),
-		LOCKED_CATEGORY: JSON.stringify(process.env.LOCKED_CATEGORY || 'steemclassifieds'),
         STEEMCONNECT_CLIENT_ID: JSON.stringify(process.env.STEEMCONNECT_CLIENT_ID || 'steemclassifieds'),
         STEEMCONNECT_REDIRECT_URL: JSON.stringify(
           process.env.STEEMCONNECT_REDIRECT_URL || 'https://steemclassifieds.herokuapp.com/callback',
