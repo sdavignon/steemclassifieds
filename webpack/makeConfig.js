@@ -47,6 +47,7 @@ function makePlugins(options) {
         IMG_HOST: JSON.stringify(process.env.IMG_HOST || 'https://img.busy.org'),
         SENTRY_PUBLIC_DSN: isDevelopment ? null : JSON.stringify(process.env.SENTRY_PUBLIC_DSN),
         STEEMCONNECT_CLIENT_ID: JSON.stringify(process.env.STEEMCONNECT_CLIENT_ID || 'steemclassifieds'),
+		LOCKED_CATEGORY: JSON.stringify(process.env.LOCKED_CATEGORY || 'steemclassifieds'),
         STEEMCONNECT_REDIRECT_URL: JSON.stringify(
           process.env.STEEMCONNECT_REDIRECT_URL || 'https://steemclassifieds.herokuapp.com/callback',
         ),
