@@ -31,7 +31,7 @@ import * as accountHistoryConstants from '../../common/constants/accountHistory'
         limit: 10,
         ["select_tags"]: [process.env.LOCKED_CATEGORY],
       };
-      return steemAPI.getDiscussionsByTrendingAsync(query);
+      return steemAPI.getDiscussionsByTrending(query);
     case 'hot':
       console.log("BY HOT")
       query.tag = process.env.LOCKED_CATEGORY; //  filtered query
@@ -47,8 +47,8 @@ import * as accountHistoryConstants from '../../common/constants/accountHistory'
     case 'trending':
       console.log("BY TRENDING", query)
       query.tag = process.env.LOCKED_CATEGORY; //  filtered query
-      console.log(steemAPI.getDiscussionsByTrendingAsync(query))
-      return steemAPI.getDiscussionsByTrendingAsync(query);
+      console.log(steemAPI.getDiscussionsByTrending(query))
+      return steemAPI.getDiscussionsByTrending(query);
     case 'blog':
       console.log("BY BLOG", query)
       return steemAPI.getDiscussionsByBlogAsync(query);
