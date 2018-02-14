@@ -59,7 +59,8 @@ class SubFeed extends React.Component {
 
   componentDidMount() {
     const { authenticated, loaded, user, match, feed, posts } = this.props;
-    const category = match.params.category;
+    //const category = match.params.category;
+	const category = process.env.LOCKED_CATEGORY; //  filtered query
     let content = [];
 
     if (!loaded && Cookie.get('access_token')) return;
@@ -88,6 +89,7 @@ class SubFeed extends React.Component {
     const isAuthenticated = authenticated;
     const wasLoaded = this.props.loaded;
     const isLoaded = loaded;
+	const category = process.env.LOCKED_CATEGORY; //  filtered query
 
     if (!isLoaded && Cookie.get('access_token')) return;
 
@@ -102,10 +104,10 @@ class SubFeed extends React.Component {
         this.props.getFeedContent('feed', user.name);
       }
     } else if (oldSortBy !== newSortBy || oldCategory !== newCategory || (!wasLoaded && isLoaded)) {
-      const fetching = getFeedLoadingFromState(newSortBy, newCategory, feed);
-      const fetched = getFeedFetchedFromState(newSortBy, newCategory, feed);
+      const fetching = getFeedLoadingFromState(newSortBy || 'trending', category, feed);
+      const fetched = getFeedFetchedFromState(newSortBy || 'trending', category, feed);
       if (!fetching && !fetched) {
-        this.props.getFeedContent(newSortBy, newCategory);
+        this.props.getFeedContent(newSortBy || 'trending', category);
       }
     }
   }

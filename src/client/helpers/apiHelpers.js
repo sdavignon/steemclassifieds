@@ -10,6 +10,63 @@ import * as accountHistoryConstants from '../../common/constants/accountHistory'
  * @param steemAPI - The same giving to Steem API
  * @returns {function}
  */
+ export const getDiscussionsFromAPI = function getDiscussionsFromAPI(sortBy, originalQuery, steemAPI) {
+  let query;
+  query = {
+    ...originalQuery,
+    ['select_tags']: [process.env.STEEMGIGS_CATEGORY],
+  };
+  console.log("SORT BY", sortBy);
+
+  switch (sortBy) {
+    /*
+    case 'feed':
+      console.log("BY FEED")
+      return steemAPI.getDiscussionsByFeedAsync(query);
+      */
+    case 'listing':
+      console.log("BY LISTING");
+      query = {
+        tag: originalQuery.tag,
+        limit: 10,
+        ["select_tags"]: [process.env.LOCKED_CATEGORY],
+      };
+      return steemAPI.getDiscussionsByTrendingAsync(query);
+    case 'hot':
+      console.log("BY HOT")
+      query.tag = process.env.LOCKED_CATEGORY; //  filtered query
+      return steemAPI.getDiscussionsByHotAsync(query);
+    case 'created':
+      console.log("BY CREATED")
+      query.tag = process.env.LOCKED_CATEGORY; //  filtered query
+      return steemAPI.getDiscussionsByCreatedAsync(query);
+    case 'active':
+      console.log("BY ACTIVE")
+      query.tag = process.env.LOCKED_CATEGORY; //  filtered query
+      return steemAPI.getDiscussionsByActiveAsync(query);
+    case 'trending':
+      console.log("BY TRENDING", query)
+      query.tag = process.env.LOCKED_CATEGORY; //  filtered query
+      console.log(steemAPI.getDiscussionsByTrendingAsync(query))
+      return steemAPI.getDiscussionsByTrendingAsync(query);
+    case 'blog':
+      console.log("BY BLOG", query)
+      return steemAPI.getDiscussionsByBlogAsync(query);
+    /*case 'comments':
+      return steemAPI.getDiscussionsByCommentsAsync(query);
+      */
+    case 'promoted':
+      console.log("BY PROMOTED")
+      query.tag = process.env.LOCKED_CATEGORY; //  filtered query
+      return steemAPI.getDiscussionsByPromotedAsync(query);
+    default:
+      throw new Error('There is not API endpoint defined for this sorting');
+  }
+};
+
+ 
+ 
+/*
 export function getDiscussionsFromAPI(sortBy, query, steemAPI) {
   switch (sortBy) {
     case 'feed':
@@ -25,7 +82,7 @@ export function getDiscussionsFromAPI(sortBy, query, steemAPI) {
       throw new Error('There is not API endpoint defined for this sorting');
   }
 }
-
+ */
 export const getAccount = username =>
   SteemAPI.sendAsync('get_accounts', [[username]]).then(result => {
     if (result.length) {
