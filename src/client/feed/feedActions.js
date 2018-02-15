@@ -32,8 +32,8 @@ export const getFeedContent = ({ sortBy = 'trending', category, limit = 20 }) =>
     type: GET_FEED_CONTENT.ACTION,
     payload: getDiscussionsFromAPI(sortBy, { tag: category, limit }, steemAPI),
     meta: {
-      sortBy,
-      category: category || 'all',
+	  sortBy: sortBy || 'trending',
+      category: category || process.env.LOCKED_CATEGORY,
       limit,
     },
   });
@@ -56,7 +56,7 @@ export const getMoreFeedContent = ({ sortBy, category, limit = 20 }) => (
     payload: getDiscussionsFromAPI(
       sortBy,
       {
-        tag: category,
+        tag: category || process.env.LOCKED_CATEGORY,
         limit: limit + 1,
         start_author: startAuthor,
         start_permlink: startPermlink,
@@ -64,8 +64,8 @@ export const getMoreFeedContent = ({ sortBy, category, limit = 20 }) => (
       steemAPI,
     ).then(postsData => postsData.slice(1)),
     meta: {
-      sortBy,
-      category: category || 'all',
+      sortBy: sortBy || 'trending',
+      category: category || process.env.LOCKED_CATEGORY,
       limit,
     },
   });
