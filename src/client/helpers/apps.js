@@ -14,5 +14,7 @@ export default {
   timer: 'Timer',
   steemjs: 'Steem.js',
   strimi: 'Strimi',
-  steemclassifieds: 'SteemClassifieds'
+  steemclassifieds: 'SteemClassifieds',
+  steemkitties: 'SteemKitties',
+  steemlottery: 'SteemLottery'
 };

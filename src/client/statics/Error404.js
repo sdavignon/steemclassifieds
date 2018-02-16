@@ -13,7 +13,7 @@ const Error404 = ({ intl, staticContext }) => {
     <div className="ErrorPage container">
       <Helmet>
         <title>
-          {intl.formatMessage({ id: 'page_not_found', defaultMessage: 'Page not found' })} - SteemClassifieds
+          {intl.formatMessage({ id: 'page_not_found', defaultMessage: 'Page not found' })} - SteemLottery
         </title>
       </Helmet>
       <h1>

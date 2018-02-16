@@ -9,5 +9,4 @@ client.sendAsync = (message, params) =>
     });
   });
 
-  
 module.exports = client;
