@@ -99,8 +99,8 @@ class QuickPostEditor extends React.Component {
     };
 
     const metaData = {
-      community: 'steemlottery',
-      app: `steemlottery/${version}`,
+      community: 'steemclassifieds',
+      app: `steemclassifieds/${version}`,
       format: 'markdown',
     };
 
