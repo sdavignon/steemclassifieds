@@ -17,10 +17,6 @@ const QuickPostEditorFooter = ({
   handleFooterFocus,
 }) => (
   // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-  <Link className="Topnav__user" to={`/@${username}`}>
-              <Avatar username={username} size={36} />
-              <span className="Topnav__user__username">{username}</span>
-            </Link>
   <div className="QuickPostEditor__footer" tabIndex="0" onFocus={handleFooterFocus}>
     <div className="QuickPostEditor__imagebox">
       {_.map(currentImages, image => (
