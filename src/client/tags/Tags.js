@@ -41,8 +41,7 @@ export default class Tags extends React.Component {
   };
 
   state = {
-    tags: {'steemclassified', 'classifieds'},
-    
+    tags: {},
   };
 
   componentDidMount() {
