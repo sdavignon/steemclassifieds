@@ -1,4 +1,4 @@
-export const getFeedFromState = (sortBy, category = 'all', state) => {
+export const getFeedFromState = (sortBy, category = 'steemclassifieds', state) => {
   switch (sortBy) {
     case 'feed':
     case 'hot':
@@ -26,7 +26,7 @@ export const getUserCommentsFromState = (username, feedState, posts) => {
   return feedList.map(feedId => posts[feedId]);
 };
 
-export const getFeedLoadingFromState = (sortBy, category = 'all', feedState) => {
+export const getFeedLoadingFromState = (sortBy, category = 'steemclassifieds', feedState) => {
   switch (sortBy) {
     case 'feed':
     case 'hot':
@@ -44,7 +44,7 @@ export const getFeedLoadingFromState = (sortBy, category = 'all', feedState) => 
   }
 };
 
-export const getFeedFetchedFromState = (sortBy, category = 'all', feedState) => {
+export const getFeedFetchedFromState = (sortBy, category = 'steemclassifieds', feedState) => {
   switch (sortBy) {
     case 'feed':
     case 'hot':
@@ -62,7 +62,7 @@ export const getFeedFetchedFromState = (sortBy, category = 'all', feedState) => 
   }
 };
 
-export const getFeedHasMoreFromState = (sortBy, listName = 'all', feedState) => {
+export const getFeedHasMoreFromState = (sortBy, listName = 'steemclassifieds', feedState) => {
   switch (sortBy) {
     case 'feed':
     case 'hot':
