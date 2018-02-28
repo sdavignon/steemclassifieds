@@ -1,5 +1,5 @@
 {
-  "hero": "Ensuring compensation for the creators of value",
+  "hero": "Buy and Sell on SteemClassifieds.com and Earn to Post",
   "search": "Search",
   "search_placeholder": "Search...",
   "search_results": "Search results",
@@ -206,7 +206,7 @@
   "link": "Add link",
   "image": "Add image",
   "get_boost": "Get the SteemLottery boost!",
-  "get_boost_content": "Want to boost your post? Add the topic \"steemlottery\" and get a like from us.",
+  "get_boost_content": "Want to boost your post? Add the topic \"steemclassifieds\" and get a like from us.",
   "drafts": "Drafts",
   "drafts_empty": "You don't have any draft saved",
   "drafts_description": "These are posts that were never made public. You can publish them or delete them.",
@@ -311,7 +311,7 @@
   "username_too_long": "Username {username} is too long.",
   "login_modal_footer_text": "Don't have an account? Signup with {link}",
   "login_to_busy": "Login to SteemClassifieds",
-  "login_modal_description": "Login with your Steem account using SteemConnect to enjoy SteemLottery at 100%",
+  "login_modal_description": "Login with your Steem account using SteemConnect to enjoy SteemClassifieds at 100%",
   "login_with_steemconnect": "Login with SteemConnect",
   "follows_you": "Follows you"
 }
