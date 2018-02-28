@@ -1,5 +1,5 @@
 {
-  "hero": "Play Lotto with STEEM, Win Big!",
+  "hero": "Buy and Sell on STEEM and Earn for Posting.",
   "search": "Search",
   "search_placeholder": "Search...",
   "search_results": "Search results",
@@ -129,7 +129,7 @@
   "invite": "Invite",
   "invite_title": "Don't use SteemLottery alone!",
   "invite_info": "Onboard new users on SteemLottery today using the link below and get 10% of their rewards for 30 days.",
-  "invite_share": "Join me today on SteemLottery and get rewarded for playing lotto with STEEM {link}",
+  "invite_share": "Join me today on SteemClassifieds and get rewarded for buying and selling with STEEM {link}",
   "more_people_not_found": "No more people were found",
   "see_all_comments": "See All Comments",
   "see_all_recommendations": "See All Recommendations",
@@ -197,7 +197,7 @@
   "link": "Add link",
   "image": "Add image",
   "get_boost": "Get the SteemLottery boost!",
-  "get_boost_content": "Want to boost your post? Add the topic \"steemlottery\" and get a like from us.",
+  "get_boost_content": "Want to boost your post? Add the topic \"steemclassifieds\" and get a like from us.",
   "drafts": "Drafts",
   "drafts_empty": "You don't have any draft saved",
   "drafts_description": "These are posts that were never made public. You can publish them or delete them.",
@@ -299,7 +299,7 @@
   "username_too_long": "Username {username} is too long.",
   "login_modal_footer_text": "Don't have an account? Signup with {link}",
   "login_to_busy": "Login to SteemLottery",
-  "login_modal_description": "Login with your Steem account using SteemConnect to enjoy SteemLottery at 100%",
+  "login_modal_description": "Login with your Steem account using SteemConnect to enjoy SteemClassifieds at 100%",
   "login_with_steemconnect": "Login with SteemConnect",
   "follows_you": "Follows you"
 }
