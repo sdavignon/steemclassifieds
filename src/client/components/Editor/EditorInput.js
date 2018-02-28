@@ -8,7 +8,6 @@ import { HotKeys } from 'react-hotkeys';
 import { MAXIMUM_UPLOAD_SIZE, isValidImage } from '../../helpers/image';
 import EditorToolbar from './EditorToolbar';
 import './EditorInput.less';
-import PostListing from '../PostListing';
 
 class EditorInput extends React.Component {
   static propTypes = {
