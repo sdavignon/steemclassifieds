@@ -6,6 +6,7 @@ import Replies from '../client/replies/Replies';
 import Activity from '../client/activity/Activity';
 import Wallet from '../client/wallet/Wallet';
 import Editor from '../client/post/Write/Write';
+import Listing from '../client/listing/Listing';
 import Settings from '../client/settings/Settings';
 import ProfileSettings from '../client/settings/ProfileSettings';
 import Invite from '../client/invite/Invite';
@@ -71,6 +72,11 @@ const routes = [
         path: '/invite',
         exact: true,
         component: Invite,
+      },
+	   {
+        path: '/listing',
+        exact: true,
+        component: Listing,
       },
       {
         path: '/@:name/(comments|followers|followed|reblogs|feed|transfers|activity)?',
