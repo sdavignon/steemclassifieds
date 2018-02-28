@@ -103,7 +103,7 @@ export default class Invite extends React.Component {
                   text={intl.formatMessage(
                     {
                       id: 'invite_share',
-                      defaultMessage: 'Join me today on SteemClassifieds.com and get rewarded to play lotto with STEEM {link}',
+                      defaultMessage: 'Join me today on SteemClassifieds.com and get rewarded to Buy and Sell with STEEM {link}',
                     },
                     {
                       link: '',
@@ -115,7 +115,7 @@ export default class Invite extends React.Component {
                   text={intl.formatMessage(
                     {
                       id: 'invite_share',
-                      defaultMessage: 'Join me today on SteemClassifieds.com and get rewarded to post for sale {link}',
+                      defaultMessage: 'Join me today on SteemClassifieds.com and get rewarded to post for selling {link}',
                     },
                     {
                       link: this.state.inviteURL,
