@@ -299,7 +299,6 @@ class EditorInput extends React.Component {
 
     return (
       <React.Fragment>
-      <PostListing>
         <EditorToolbar onSelect={this.insertCode} />
         <div className="EditorInput__dropzone-base">
           <Dropzone
