@@ -12,14 +12,14 @@ import { getAuthenticatedUserName } from '../reducers';
 import FacebookShare from '../components/Button/FacebookShare';
 import TwitterShare from '../components/Button/TwitterShare';
 import EmailShare from '../components/Button/EmailShare';
-import './Adventure.less';
+import './Listing.less';
 
 @requiresLogin
 @injectIntl
 @connect(state => ({
   authenticatedUserName: getAuthenticatedUserName(state),
 }))
-export default class Adventure extends React.Component {
+export default class Listing extends React.Component {
   static propTypes = {
     intl: PropTypes.shape().isRequired,
     authenticatedUserName: PropTypes.string,
@@ -67,11 +67,11 @@ export default class Adventure extends React.Component {
     return (
       <div className="shifted">
         <Helmet>
-          <title>{intl.formatMessage({ id: 'adventure', defaultMessage: 'Start Your Adventure' })} - SteemKitties</title>
+          <title>{intl.formatMessage({ id: 'listing', defaultMessage: 'Create a New Listing' })} - SteemClassifieds</title>
         </Helmet>
         <div className="settings-layout container">
-          	<div className="waiting"><img src="/images/wait.gif" /><h2>Meow, Please wait...</h2></div>       
-            <div className="Adventure">
+          
+            <div className="Listing">
               
             </div>
         
