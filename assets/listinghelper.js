@@ -20,8 +20,7 @@ setTimeout(function(){
 
 
 function CheckItemClick(e){
-		Cookies.set($(e).name,$(e).val()); 
-		$(e).addClass("glow");      //add the class to the clicked element
+    $(e).addClass("glow");      //add the class to the clicked element
 		localStorage.setItem($(e).name,$(e).val());
     $( "p" ).slideToggle( "slow" );
     $(".Action").data('next') = $(e).data('next'); 
