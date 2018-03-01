@@ -73,10 +73,9 @@ export default class Listing extends React.Component {
           <title>{intl.formatMessage({ id: 'listing', defaultMessage: 'Create a New Listing' })} - SteemClassifieds</title>
         </Helmet>
         <div className="settings-layout container">
-          
+          <div className="waiting"><img src="/wait1.gif" /><h2>Please wait...</h2></div>
             <div className="Listing">
-         { this.state.ListingType == 'ListingType' ? <ListingType /> : null }
-                <input type="submit" value="Continue" onClick={this.onClick} />
+       
             </div>
         
         </div>
