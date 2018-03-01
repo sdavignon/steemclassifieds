@@ -1,9 +1,9 @@
 var user = "";
 function listingForm(){
-$(".wait").show();
-   		Cookies.set('transfer', '');
+    $(".wait").show();
+  	localStorage.setItem('transfer', '');
   	var user = $(".Topnav__user__username")[0].innerText;
-	$('.Listing').load( "/listingTypeForm.html", function() {
+	  $('.Listing').load( "/listingTypeForm.html", function() {
     $('input[type=radio][name=id]').change(CheckItemClick());
     $(".wait").hide();
 });
