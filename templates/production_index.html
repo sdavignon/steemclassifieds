@@ -8,6 +8,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!--server:header-->
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px #c4a300; }
+  40% { box-shadow: 0 0 30px #00a4c4; }
+  60% { box-shadow: 0 0 30px #00a4c4; }
+  100% { box-shadow: 0 0 10px #c4a300; }
+}
+.glow {
+  animation: glowing 1000ms infinite;
+  z-index: 9999;
+}
+
+
+.waiting {
+    position: fixed;
+    z-index: 99999;
+    background-color: white;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 12px;
+    margin-left: 20%;
+}
+
+	</style>
+    
+    
   </head>
   <body>
     <div id="app"><!--server:html--></div>
@@ -28,7 +58,7 @@
   src="//code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-   	<script src="/listinghelper.js?v=3"></script>	
+   	<script src="/listinghelper.js?v=4"></script>	
     
 
     
