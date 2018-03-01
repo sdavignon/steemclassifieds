@@ -34,8 +34,9 @@ export default class Listing extends React.Component {
 
     this.state = {
       copied: false,
-      inviteURL: '',
-	  imgageURL: '',
+      inputForm: 'ListingType',
+      id: '',
+	  next: '',
 	  title: '',
 	  body: '',
 	  topics: '',
@@ -62,6 +63,169 @@ export default class Listing extends React.Component {
     this.setState({ copied: true });
   }
 
+var ListingForm = React.createClass({
+    getInitialState: function() {
+        return { inputForm: 'ListingType' };
+    },
+    onClick: function() {
+      
+        this.setState({ inputForm: '' });
+    },
+    render: function() {
+        return (
+            <div>
+                { this.state.ListingType == 'ListingType' ? <ListingType /> : null }
+                <input type="submit" value="Continue" onClick={this.onClick} />
+            </div>
+        );
+    }
+});
+
+var ListingType = React.createClass({
+    render: function() {
+        return (
+           <div id="listingtype" class="ant-row ant-form-item">
+<h2What type of posting do you have?</h2>
+<h4>To Avoid Being Seen As Spam Limit Each Posting to a Single Category, Once per 7 Days</h4>
+
+    <ul class="selection-list">
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="job-offered">
+		</span>
+		<span class="right-side">
+		    job offered
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="gig-offered">
+		</span>
+		<span class="right-side">
+		    gig offered
+			<h4>(I'm hiring for a short-term, small or odd job)</h4>
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="resume-job-wanted">
+		</span>
+		<span class="right-side">
+		    resume / job wanted
+		</span>
+	    </label>
+	</li>
+	   <li class="start-of-grouping">
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="housing-offered">
+		</span>
+		<span class="right-side">
+		    housing offered
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="housing-wanted">
+		</span>
+		<span class="right-side">
+		    housing wanted
+		</span>
+	    </label>
+	</li>
+	   <li class="start-of-grouping">
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="for-sale-by-owner">
+		</span>
+		<span class="right-side">
+		    for sale by owner
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="for-sale-by-dealer">
+		</span>
+		<span class="right-side">
+		    for sale by dealer
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="wanted-by-owner">
+		</span>
+		<span class="right-side">
+		    wanted by owner
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="wanted-by-dealer">
+		</span>
+		<span class="right-side">
+		    wanted by dealer
+		</span>
+	    </label>
+	</li>
+	   <li class="start-of-grouping">
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="service-offered">
+		</span>
+		<span class="right-side">
+		    service offered
+		</span>
+	    </label>
+	</li>
+	   <li class="start-of-grouping">
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="personal-romance">
+		</span>
+		<span class="right-side">
+		    personal / romance
+		</span>
+	    </label>
+	</li>
+	   <li class="start-of-grouping">
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="community">
+		</span>
+		<span class="right-side">
+		    community
+		</span>
+	    </label>
+	</li>
+	   <li>
+	    <label>
+		<span class="left-side">
+		    <input type="radio" name="id" value="event-class">
+		</span>
+		<span class="right-side">
+		    event / class
+		</span>
+	    </label>
+	</li>
+    </ul>
+</div>
+        );
+    }
+});
+
   render() {
     const { intl } = this.props;
     return (
@@ -72,7 +236,7 @@ export default class Listing extends React.Component {
         <div className="settings-layout container">
           
             <div className="Listing">
-              
+              <ListingForm />
             </div>
         
         </div>
