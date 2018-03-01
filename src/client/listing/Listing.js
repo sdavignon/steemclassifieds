@@ -63,7 +63,29 @@ export default class Listing extends React.Component {
     this.setState({ copied: true });
   }
 
-var ListingForm = React.createClass({
+
+
+  render() {
+    const { intl } = this.props;
+    return (
+      <div className="shifted">
+        <Helmet>
+          <title>{intl.formatMessage({ id: 'listing', defaultMessage: 'Create a New Listing' })} - SteemClassifieds</title>
+        </Helmet>
+        <div className="settings-layout container">
+          
+            <div className="Listing">
+              <ListingForm />
+            </div>
+        
+        </div>
+      </div>
+    );
+  }
+}
+
+
+ListingForm = React.createClass({
     getInitialState: function() {
         return { inputForm: 'ListingType' };
     },
@@ -81,7 +103,7 @@ var ListingForm = React.createClass({
     }
 });
 
-var ListingType = React.createClass({
+ListingType = React.createClass({
     render: function() {
         return (
            <div id="listingtype" class="ant-row ant-form-item">
@@ -225,22 +247,3 @@ var ListingType = React.createClass({
         );
     }
 });
-
-  render() {
-    const { intl } = this.props;
-    return (
-      <div className="shifted">
-        <Helmet>
-          <title>{intl.formatMessage({ id: 'listing', defaultMessage: 'Create a New Listing' })} - SteemClassifieds</title>
-        </Helmet>
-        <div className="settings-layout container">
-          
-            <div className="Listing">
-              <ListingForm />
-            </div>
-        
-        </div>
-      </div>
-    );
-  }
-}
