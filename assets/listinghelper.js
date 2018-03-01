@@ -21,6 +21,9 @@ function listingForm(){
 $(document).ready(function() {	
 setTimeout(function(){
 	listingForm();
+  	$('input[type=radio][name=id]').labelauty({ minimum_width: "155px" });
+			$('input[type=radio][name=id]').labelauty({ label: false });
+  
  }, 500);
 });
 
