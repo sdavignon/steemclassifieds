@@ -1,6 +1,6 @@
 var user = "";
 function listingForm(){
-    $(".wait").show();
+    $(".waiting").show();
   	localStorage.setItem('transfer', '');
   	var user = $(".Topnav__user__username")[0].innerText;
 	  $('.Listing').load( '/listingTypeForm.html', function() {
@@ -12,7 +12,7 @@ function listingForm(){
           });
        });
  
-    $(".wait").hide();
+    $(".waiting").hide();
     });
 
 }
@@ -30,7 +30,7 @@ function CheckItemClick(e){
       $(this).removeClass("glow");
      });
     $(e).addClass("glow");      //add the class to the clicked element
-		localStorage.setItem($(e).name,$(e).val());
+		localStorage.setItem('id',$(e).val());
    // $( "p" ).slideToggle( "slow" );
   //  $(".Action").data('next') = $(e).data('next'); 
 }	
