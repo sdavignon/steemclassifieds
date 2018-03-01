@@ -3,10 +3,10 @@ function listingForm(){
     $(".wait").show();
   	localStorage.setItem('transfer', '');
   	var user = $(".Topnav__user__username")[0].innerText;
-	  $('.Listing').load( "/listingTypeForm.html", function() {
-    $('input[type=radio][name=id]').change(CheckItemClick());
+	  $('.Listing').load( '/listingTypeForm.html', function() {
+    $('input[type=radio][name=id]').change(CheckItemClick(this));
     $(".wait").hide();
-});
+    });
  
 
 }
