@@ -4,10 +4,16 @@ function listingForm(){
   	localStorage.setItem('transfer', '');
   	var user = $(".Topnav__user__username")[0].innerText;
 	  $('.Listing').load( '/listingTypeForm.html', function() {
-    $('input[type=radio][name=id]').change(CheckItemClick(this));
+      
+      $('input[type=radio][name=id]').each(function () {
+
+       $(this).change(function () {
+              CheckItemClick(this);
+          });
+       });
+ 
     $(".wait").hide();
     });
- 
 
 }
 
@@ -20,10 +26,13 @@ setTimeout(function(){
 
 
 function CheckItemClick(e){
+  $('input[type=radio][name=id]').each(function () {
+      $(this).removeClass("glow");
+     });
     $(e).addClass("glow");      //add the class to the clicked element
 		localStorage.setItem($(e).name,$(e).val());
-    $( "p" ).slideToggle( "slow" );
-    $(".Action").data('next') = $(e).data('next'); 
+   // $( "p" ).slideToggle( "slow" );
+  //  $(".Action").data('next') = $(e).data('next'); 
 }	
 
 
