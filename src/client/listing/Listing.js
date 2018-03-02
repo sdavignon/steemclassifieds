@@ -77,7 +77,13 @@ export default class Listing extends React.Component {
             <div className="Listing">
        
             </div>
-        
+              <Action
+                  primary
+                  text={intl.formatMessage({
+                    id: 'post_send_progress',
+                    defaultMessage: 'Next',
+                  })}
+                />
         </div>
       </div>
     );
