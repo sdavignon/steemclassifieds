@@ -54,9 +54,9 @@ function nextForm() {
               CheckItemClick(this);
           });
        });
- 
+    $('.Action').innerText = "Next";
     $(".waiting").hide();
-
+ });
 
 
  }
