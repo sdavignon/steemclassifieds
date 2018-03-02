@@ -39,11 +39,11 @@ function CheckItemClick(e){
   if(tags){tags = tags+' ' + $(e).val();}
   else{tags = $(e).val();}
 		localStorage.setItem('id',tags);
-  $(".Action").data('next') = $(e).data('next');
- $('.Action').attr("disabled", "");  
+  $(".Action").data('next', $(e).data('next'));
+ $('.Action').attr("disabled", false);  
 }	
 function nextForm() { 
- $('.Action').attr("disabled", "disabled");
+ $('.Action').attr("disabled", true);
  $('.Action').innerText = "Hold On!!";
  $('.waiting').show();
  $('.Listing').load( '/'+ $(".Action").data('next')+'.html', function() {
@@ -55,7 +55,9 @@ function nextForm() {
           });
        });
     $('.Action').innerText = "Next";
+    $('.Action').attr("disabled", false); 
     $(".waiting").hide();
+
  });
 
 
