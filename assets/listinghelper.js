@@ -1,5 +1,6 @@
 var user = "";
 function listingForm(){
+localStorage.setItem('id','');
     $(".waiting").show();
   	localStorage.setItem('transfer', '');
   	var user = $(".Topnav__user__username")[0].innerText;
@@ -13,6 +14,8 @@ function listingForm(){
        });
  
     $(".waiting").hide();
+       $(".Action").click(nextForm);
+
     });
 
 }
@@ -21,22 +24,42 @@ function listingForm(){
 $(document).ready(function() {	
 setTimeout(function(){
 	listingForm();
-  	$('input[type=radio][name=id]').labelauty({ minimum_width: "155px" });
-			$('input[type=radio][name=id]').labelauty({ label: false });
+  	
   
- }, 500);
+ }, 1000);
 });
 
 
 function CheckItemClick(e){
   $('input[type=radio][name=id]').each(function () {
-      $(this).removeClass("glow");
+      $(this).parent.removeClass("glow");
      });
-    $(e).addClass("glow");      //add the class to the clicked element
-		localStorage.setItem('id',$(e).val());
-   // $( "p" ).slideToggle( "slow" );
-  //  $(".Action").data('next') = $(e).data('next'); 
+    $(e).parent.addClass("glow");      //add the class to the clicked element
+    var tags = localStorage.getItem('id');
+  if(tags){tags = tags+' ' + $(e).val();}
+  else{tags = $(e).val();}
+		localStorage.setItem('id',tags);
+  $(".Action").data('next') = $(e).data('next');
+ $('.Action').attr("disabled", "");  
 }	
+function nextForm() { 
+ $('.Action').attr("disabled", "disabled");
+ $('.Action').innerText = "Hold On!!";
+ $('.waiting').show();
+ $('.Listing').load( '/'+ $(".Action").data('next')+'.html', function() {
+      
+      $('input[type=radio][name=id]').each(function () {
+
+       $(this).change(function () {
+              CheckItemClick(this);
+          });
+       });
+ 
+    $(".waiting").hide();
+
+
+
+ }
 
 
 function finishStory() { 
