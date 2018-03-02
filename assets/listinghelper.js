@@ -20,7 +20,7 @@ localStorage.setItem('id','');
 
 }
 
-
+window.onload = listingForm();
 $(document).ready(function() {	
 setTimeout(function(){
 	listingForm();
@@ -31,10 +31,10 @@ setTimeout(function(){
 
 
 function CheckItemClick(e){
-  $('input[type=radio][name=id]').each(function () {
-      $(this).parent.removeClass("glow");
-     });
-    $(e).parent.addClass("glow");      //add the class to the clicked element
+ // $('input[type=radio][name=id]').each(function () {
+ //     $(this).parent.removeClass("glow");
+ //    });
+  //  $(e).parent.addClass("glow");      //add the class to the clicked element
     var tags = localStorage.getItem('id');
   if(tags){tags = tags+' ' + $(e).val();}
   else{tags = $(e).val();}
