@@ -5,7 +5,7 @@ function listingForm(){
     localStorage.setItem('current', 'listingTypeForm');
     $(".waiting").show();
   	localStorage.setItem('transfer', '');
-  	user = $(".Topnav__user__username")[0].innerText;
+  //	user = $(".Topnav__user__username")[0].innerText;
   
 	  $('.Listing').load( '/listingTypeForm.html', function() {
        $('input[type=radio][name=id]').each(function () {
