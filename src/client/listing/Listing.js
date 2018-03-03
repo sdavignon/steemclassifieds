@@ -80,9 +80,9 @@ export default class Listing extends React.Component {
        
             </div>
 <div class="Editor__bottom">
-           <div class="Editor__bottom__left"><div class="ant-row ant-form-item Editor__bottom__back"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "></div></div></div><div class="ant-row ant-form-item Editor__bottom__submit"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "><button class="Action ant-btn-lg" data-next="listingForm" id="back">Back</button></div></div></div></div>
+           <div class="Editor__bottom__left"><div class="ant-row ant-form-item Editor__bottom__back"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "></div></div></div><div class="ant-row ant-form-item Editor__bottom__submit"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "><button class="Action ant-btn-lg" data-next="listingTypeForm" id="back">Back</button></div></div></div></div>
 
-            <div class="Editor__bottom__right"><div class="ant-row ant-form-item Editor__bottom__next"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "></div></div></div><div class="ant-row ant-form-item Editor__bottom__submit"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "><button class="Action ant-btn-lg" data-next="listingForm" id="next">Next</button></div></div></div></div>
+            <div class="Editor__bottom__right"><div class="ant-row ant-form-item Editor__bottom__next"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "></div></div></div><div class="ant-row ant-form-item Editor__bottom__submit"><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control "><button class="Action ant-btn-lg" data-next="listingTypeForm" id="next">Next</button></div></div></div></div>
 </div>              
         </div>
       </div>
