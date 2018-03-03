@@ -34,15 +34,13 @@ function CheckItemClick(e){
     localStorage.setItem('tags',$(e).val());
     if(tags){tags = tags+' ' + $(e).val();}else{tags = $(e).val();}
     localStorage.setItem('tags',tags);
-
+    var next = $(e).data('next');
+    if(!next){next = "listingLocation";}
     $("#back").data('last',  localStorage.getItem('current'));
-  if(!$(e).data('next')){
-    $("#next").data('next', 'listingLocation');
-  }else{
-    $("#next").data('next', $(e).data('next'));
-  }
+    $("#next").data('next', next);
+
     $('#next').attr("disabled", false);  
-    localStorage.setItem('current', $(e).data('next'));
+    localStorage.setItem('current',next);
 }	
 
 function nextForm() { 
