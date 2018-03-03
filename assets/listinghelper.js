@@ -2,6 +2,7 @@ var user = "";
 
 function listingForm(){
     localStorage.setItem('tags','');
+    localStorage.setItem('tag','');
     localStorage.setItem('current', 'listingTypeForm');
     $(".waiting").show();
   	localStorage.setItem('transfer', '');
@@ -33,7 +34,7 @@ setTimeout(function(){
 function CheckItemClick(e){
  
     var tags = localStorage.getItem('tags');
-
+    localStorage.setItem('tags',$(e).val());
     if(tags){tags = tags+' ' + $(e).val();}else{tags = $(e).val();}
     localStorage.setItem('tags',tags);
 
@@ -61,6 +62,10 @@ function nextForm() {
 function lastForm() { 
   $('#back').attr("disabled", true);
   $('#back').innerText = "Hold On!!";
+  var tags = localStorage.getItem('tags');
+  var tag = localStorage.getItem('tag');
+  tags = tags.replace(tag, tags).trim();
+  localStorage.setItem('tags',tags);
   $('#next').show();
   $('.waiting').show();
   
