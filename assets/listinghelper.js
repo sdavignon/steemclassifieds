@@ -15,10 +15,12 @@ function listingForm(){
     });
 }
 
-window.onload = listingForm();
+//window.onload = listingForm();
 
 $(document).ready(function() {	
+
   setTimeout(function(){
+    listingForm();
     $('input[type=radio][name=id]').each(function () {
        $(this).change(function () {
               CheckItemClick(this);
