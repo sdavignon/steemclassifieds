@@ -18,15 +18,17 @@ function listingForm(){
 //window.onload = listingForm();
 
 $(document).ready(function() {	
-
   setTimeout(function(){
     listingForm();
+ }, 1000);
+ setTimeout(function(){
     $('input[type=radio][name=id]').each(function () {
        $(this).change(function () {
               CheckItemClick(this);
           });
       });
- }, 1000);
+ }, 2000);
+
 });
 
 
