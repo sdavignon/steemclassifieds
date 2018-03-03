@@ -39,8 +39,11 @@ function CheckItemClick(e){
     localStorage.setItem('tags',tags);
 
     $("#back").data('last',  localStorage.getItem('current'));
+  if(!$(e).data('next')){
+    $("#next").data('next', 'listingLocation');
+  }else{
     $("#next").data('next', $(e).data('next'));
-
+  }
     $('#next').attr("disabled", false);  
     localStorage.setItem('current', $(e).data('next'));
 }	
