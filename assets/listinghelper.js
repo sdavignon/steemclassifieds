@@ -9,11 +9,6 @@ function listingForm(){
   //	user = $(".Topnav__user__username")[0].innerText;
   
 	  $('.Listing').load( '/listingTypeForm.html', function() {
-       $('input[type=radio][name=id]').each(function () {
-       $(this).change(function () {
-              CheckItemClick(this);
-          });
-      });
       $(".waiting").hide();
       $("#next").click(nextForm);
       $("#back").click(lastForm);
@@ -21,15 +16,17 @@ function listingForm(){
 }
 
 window.onload = listingForm();
-/*
+
 $(document).ready(function() {	
-setTimeout(function(){
-	listingForm();
-  	
-  
+  setTimeout(function(){
+    $('input[type=radio][name=id]').each(function () {
+       $(this).change(function () {
+              CheckItemClick(this);
+          });
+      });
  }, 1000);
 });
-*/
+
 
 function CheckItemClick(e){
  
