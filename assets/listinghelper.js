@@ -52,20 +52,12 @@ function processTags(tag, remove){
   //return tag;     
 } 
 
-
-function checkItemClick(){
- 
-    //localStorage.setItem('tags',$(this).val());
-     var next = $(e).data('next');
-    if(!next){next = "listingLocation";}
-    $("#back").data('last',  localStorage.getItem('current'));
-    $("#next").data('next', next);
-
-    $('#next').attr("disabled", false);  
-    localStorage.setItem('current',next);
-}	
-
 function nextForm() { 
+   if($('input:radio:checked').val() === undefined){
+    alert('Select a Classified Category');
+    return;
+  }
+ 
   var nextForm = $('input:radio').data('next');
   var tag = $('input:radio').val();
 
@@ -75,12 +67,14 @@ function nextForm() {
  
   $('.Listing').load('/'+ nextForm+'.html', function() {
     localStorage.setItem('tag', tag);
-    processTags(tag);
-    $("#back").data('back', nextForm);
+    processTags(tag); 
+    $('#back').data("back",$('#back').data("next")); 
     $("#back").data('tag', tag);
     $('#back').attr("disabled", false);  
+    
     $('#next').innerText = "Next";
     $('#next').attr("disabled", false); 
+    
     $(".waiting").hide();
     $('#back').show();
   });
@@ -115,3 +109,14 @@ function finishStory() {
 
 
 
+function checkItemClick(){
+ 
+    //localStorage.setItem('tags',$(this).val());
+     var next = $(e).data('next');
+    if(!next){next = "listingLocation";}
+    $("#back").data('last',  localStorage.getItem('current'));
+    $("#next").data('next', next);
+
+    $('#next').attr("disabled", false);  
+    localStorage.setItem('current',next);
+}	
