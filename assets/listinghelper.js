@@ -58,8 +58,8 @@ function nextForm() {
     return;
   }
  
-  var nextForm = $('input:radio').data('next');
-  var tag = $('input:radio').val();
+  var nextForm = $('input:radio:checked').data('next');
+  var tag = $('input:radio:checked').val();
 
   $('.waiting').show();
   $('#next').attr("disabled", true);
