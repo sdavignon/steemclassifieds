@@ -68,7 +68,7 @@ function nextForm() {
   $('.Listing').load('/'+ nextForm+'.html', function() {
     localStorage.setItem('tag', tag);
     processTags(tag); 
-    $('#back').data("back",$('#back').data("next")); 
+    $('#back').data("back", $('#next').data('next')); 
     $("#back").data('tag', tag);
     $('#back').attr("disabled", false);  
     
@@ -87,11 +87,13 @@ function lastForm() {
   $('#back').innerText = "Hold On!!";
   $('.waiting').show();
   
-  processTags(tag, true);
-  localStorage.setItem('tag', '');
+  
  
  
   $('.Listing').load('/'+ lastForm+'.html', function() {
+    processTags(tag, true);
+  localStorage.setItem('tag', '');
+    $('#next').data("next", $('#back').data('back')); 
  
     $('#back').innerText = "Next";
     $('#back').attr("disabled", false); 
