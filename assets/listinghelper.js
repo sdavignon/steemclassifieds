@@ -2,16 +2,20 @@ var user = "";
 
 function listingForm(){
     localStorage.setItem('tags','');
-    localStorage.setItem('tag','');
+    localStorage.setItem('tag','');  	
+    localStorage.setItem('transfer', '');
     localStorage.setItem('current', 'listingTypeForm');
     $(".waiting").show();
-  	localStorage.setItem('transfer', '');
-  //	user = $(".Topnav__user__username")[0].innerText;
+    $("#back").hide();
+    $("#next").hide();
+
+  	user = $("#username").val();
   
 	  $('.Listing').load( '/listingTypeForm.html', function() {
       $(".waiting").hide();
+       $("#next").show();
+
       $("#next").click(nextForm);
-      $("#back").click(lastForm);
     });
 }
 
@@ -21,24 +25,38 @@ $(document).ready(function() {
   setTimeout(function(){
     listingForm();
  }, 1000);
- setTimeout(function(){
-    $('input[type=radio][name=id]').each(function () {
-       $(this).change(function () {
-              CheckItemClick(this);
-          });
-      });
- }, 2000);
+ setTimeout(attachClick, 2000);
 
 });
 
-
-function CheckItemClick(e){
+function processTags(tag, remove){
+   if(tag === undefined) tag = "";
+   if(remove === undefined) remove = false;
+   tag = tag + " " + localStorage.getItem('tags');
+   var tags = tag.split(" ");
  
-    var tags = localStorage.getItem('tags');
-    localStorage.setItem('tags',$(e).val());
-    if(tags){tags = tags+' ' + $(e).val();}else{tags = $(e).val();}
-    localStorage.setItem('tags',tags);
-    var next = $(e).data('next');
+   var uniquetags = [];
+   if(remove){
+    $.each(tags, function(i, el){
+        if(el !== tag){
+          if($.inArray(el, uniquetags) === -1) uniquetags.push(el);
+        }
+    });
+   }else{
+      $.each(tags, function(i, el){
+        if($.inArray(el, uniquetags) === -1) uniquetags.push(el);
+    });
+   }
+  tag = uniquetags.join(" ");
+  localStorage.setItem('tags',tag);
+  //return tag;     
+} 
+
+
+function checkItemClick(){
+ 
+    //localStorage.setItem('tags',$(this).val());
+     var next = $(e).data('next');
     if(!next){next = "listingLocation";}
     $("#back").data('last',  localStorage.getItem('current'));
     $("#next").data('next', next);
@@ -48,40 +66,48 @@ function CheckItemClick(e){
 }	
 
 function nextForm() { 
+  var nextForm = $('input:radio').data('next');
+  var tag = $('input:radio').val();
+
+  $('.waiting').show();
   $('#next').attr("disabled", true);
   $('#next').innerText = "Hold On!!";
-  $('#back').show();
-  $('.waiting').show();
-  
-  $('.Listing').load('/'+ $("#next").data('next')+'.html', function(){$('input[type=radio][name=id]').each(function(){$(this).change(function () {CheckItemClick(this);});});
+ 
+  $('.Listing').load('/'+ nextForm+'.html', function() {
+    localStorage.setItem('tag', tag);
+    processTags(tag);
+    $("#back").data('back', nextForm);
+    $("#back").data('tag', tag);
+    $('#back').attr("disabled", false);  
+    $('#next').innerText = "Next";
+    $('#next').attr("disabled", false); 
+    $(".waiting").hide();
+    $('#back').show();
+  });
+}
 
-  $('#next').innerText = "Next";
-  $('#next').attr("disabled", false); 
-  $(".waiting").hide();
-  $('#back').show();
- });
- }
 function lastForm() { 
+  var lastForm = $("#back").data('back');
+  var tag = $("#back").data('tag'); 
   $('#back').attr("disabled", true);
   $('#back').innerText = "Hold On!!";
-  var tags = localStorage.getItem('tags');
-  var tag = localStorage.getItem('tag');
-  tags = tags.replace(tag, tags).trim();
-  localStorage.setItem('tags',tags);
-  $('#next').show();
   $('.waiting').show();
   
-  $('.Listing').load('/'+ $("#back").data('last')+'.html', function(){$('input[type=radio][name=id]').each(function(){$(this).change(function () {CheckItemClick(this);});});
-
-  $('#back').innerText = "Next";
-  $('#back').attr("disabled", false); 
-  $(".waiting").hide();
-  $('#next').show();
+  processTags(tag, true);
+  localStorage.setItem('tag', '');
+ 
+ 
+  $('.Listing').load('/'+ lastForm+'.html', function() {
+ 
+    $('#back').innerText = "Next";
+    $('#back').attr("disabled", false); 
+    $(".waiting").hide();
+    $('#next').show();
  });
  }
 
 function finishStory() { 
- $('.Action').attr("disabled", "disabled");
+  $('.Action').attr("disabled", "disabled");
   $('.Action').innerText = "Hold On!!";
   $('.waiting').show();
   location.href = "/editor";
