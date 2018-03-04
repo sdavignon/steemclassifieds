@@ -6,7 +6,7 @@ function listingForm(){
     localStorage.setItem('transfer', '');
     localStorage.setItem('current', 'listingTypeForm');
     $(".waiting").show();
-    $("#back").hide();
+ 
     $("#next").hide();
 
   	user = $("#username").val();
@@ -68,35 +68,30 @@ function nextForm() {
   $('.Listing').load('/'+ nextForm+'.html', function() {
     localStorage.setItem('tag', tag);
     processTags(tag); 
-    $('#back').data("back", $('#next').data('next')); 
-    $("#back").data('tag', tag);
-    $('#back').attr("disabled", false);  
-    
+  
     $('#next').innerText = "Next";
     $('#next').attr("disabled", false); 
     
     $(".waiting").hide();
-    $('#back').show();
+
   });
 }
 
 function lastForm() { 
-  var lastForm = $("#back").data('back');
-  var tag = $("#back").data('tag'); 
-  $('#back').attr("disabled", true);
-  $('#back').innerText = "Hold On!!";
-  $('.waiting').show();
   
-  $('.Listing').load('/'+ lastForm+'.html', function() {
-    processTags(tag, true);
-    localStorage.setItem('tag', '');
-    $('#next').data("next", $('#back').data('back')); 
+    $(".waiting").show();
  
-    $('#back').innerText = "Next";
-    $('#back').attr("disabled", false); 
-    $(".waiting").hide();
-    $('#next').show();
- });
+    $("#next").hide();
+  
+	  $('.Listing').load( '/listingTypeForm.html', function() {
+      $(".waiting").hide();
+       $("#next").show();
+        localStorage.setItem('tags','');
+        localStorage.setItem('tag','');  	
+        localStorage.setItem('transfer', '');
+        localStorage.setItem('current', 'listingTypeForm');
+     
+    });
  }
 
 function finishStory() { 
