@@ -25,8 +25,7 @@ $(document).ready(function() {
   setTimeout(function(){
     listingForm();
  }, 1000);
- setTimeout(attachClick, 2000);
-
+ 
 });
 
 function processTags(tag, remove){
