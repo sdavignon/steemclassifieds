@@ -58,6 +58,7 @@ function nextForm() {
   }
  
   var nextForm = $('input:radio:checked').data('next');
+  if(nextForm === undefined) nextForm = 'listingLocation';
   var tag = $('input:radio:checked').val();
 
   $('.waiting').show();
@@ -86,12 +87,9 @@ function lastForm() {
   $('#back').innerText = "Hold On!!";
   $('.waiting').show();
   
-  
- 
- 
   $('.Listing').load('/'+ lastForm+'.html', function() {
     processTags(tag, true);
-  localStorage.setItem('tag', '');
+    localStorage.setItem('tag', '');
     $('#next').data("next", $('#back').data('back')); 
  
     $('#back').innerText = "Next";
