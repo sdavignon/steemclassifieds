@@ -113,8 +113,8 @@ class Topnav extends React.Component {
               placement="bottom"
               title={intl.formatMessage({ id: 'write_post', defaultMessage: 'Write post' })}
             >
-              <Link to="/editor" className="Topnav__link">
-                <i className="iconfont icon-write" />
+              <Link to="/listing" className="Topnav__link">
+                <svg width="1024" height="1024" viewBox="0 0 1024 1024" style="margin-left: calc(50% - 0.5em)"><g transform="scale(0.03125 0.03125)"><path d="M896 256v-128h-896v704c0 35.346 28.654 64 64 64h864c53.022 0 96-42.978 96-96v-544h-128zM832 832h-768v-640h768v640zM128 320h640v64h-640zM512 448h256v64h-256zM512 576h256v64h-256zM512 704h192v64h-192zM128 448h320v320h-320z"></path></g></svg>
               </Link>
             </Tooltip>
           </Menu.Item>
