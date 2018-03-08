@@ -65,7 +65,7 @@ function nextForm() {
   $('#next').attr("disabled", true);
   $('#next').innerText = "Hold On!!";
  
-  $('.Listing').load('/'+ nextForm+'.html', function() {
+  $('.Listing').load('/'+ nextForm+'.html?ie=' + (new Date()).getTime(), function() {
     localStorage.setItem('tag', tag);
     processTags(tag); 
   
@@ -73,7 +73,9 @@ function nextForm() {
     $('#next').attr("disabled", false); 
     
     $(".waiting").hide();
+    if(nextForm == 'listingLocation') {
 googleMap();
+    }
   });
 }
 
